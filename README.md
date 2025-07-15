@@ -1,32 +1,34 @@
-# Encrypted DAO Voting Demo (FHEVM)
+# FHE Voting Demo (Zama FHEVM)
 
-A minimal example of **fully‑encrypted on‑chain voting** using Zama's FHEVM.
+This repository contains a **minimal but fully‑functional** encrypted DAO voting demo built for the Zama *Knowledge Sharer* challenge.
 
-## What it does
-* Accepts **encrypted votes**.
-* Adds them on‑chain **without decryption**.
-* Anyone with the private key can decrypt the final tally off‑chain.
+## What it demonstrates
+- **Encrypted inputs:** voters submit ciphertexts generated with `fhevmjs`.
+- **On‑chain homomorphic addition:** the contract aggregates votes with `FHE.add` — never decrypting.
+- **Encrypted output:** anyone entitled to the decryption key can reveal the tally off‑chain.
 
-## Stack
-* Solidity `EncryptedVoting` contract (see `contracts/EncryptedVoting.sol`)
-* Hardhat for builds & tests
-* `@fhenixprotocol/fhevmjs` to encrypt votes client‑side
-* Fhenix testnet RPC (`api.fhenix.zone`)
+## Folder structure
+```
+contracts/EncryptedVoting.sol   # smart‑contract
+castVote.js                     # JS script to encrypt & send votes
+EncryptedVotingABI.json         # ABI (generated after compile)
+hardhat.config.js               # hardhat + FHEVM network config
+.env.sample                     # put secrets here
+```
 
 ## Quick start
 
 ```bash
-git clone YOUR_REPO_URL
+git clone https://github.com/Kingofnorth0560/fhevm-voting-demo.git
 cd fhevm-voting-demo
 npm install
-cp .env.sample .env            # fill PRIVATE_KEY & CONTRACT_ADDR
-npx hardhat compile            # needs Fhenix fork of solc
-
-# deploy contract (example)
+cp .env.sample .env   # fill PRIVATE_KEY & CONTRACT_ADDR
+npx hardhat compile   # requires @fhenixprotocol/hardhat-plugin
+# deploy (example)
 npx hardhat run scripts/deploy.js --network fhenix
-
-# cast an encrypted vote
-node castVote.js
+node castVote.js      # cast encrypted vote
 ```
 
-Read the full FHEVM docs → <https://docs.zama.ai>
+## Docs & Links
+* Zama docs – <https://docs.zama.ai>
+* Fhenix testnet RPC – `https://api.fhenix.zone:7747`
