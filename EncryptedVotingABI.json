@@ -1,35 +1,28 @@
 [
   {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_proposal",
-        "type": "string"
-      }
-    ],
-    "name": "addProposal",
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "endVoting",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "proposalId",
-        "type": "uint256"
-      }
-    ],
-    "name": "getProposal",
+    "inputs": [],
+    "name": "getResults",
     "outputs": [
       {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
+        "internalType": "uint256",
+        "name": "yesCount",
+        "type": "uint256"
       },
       {
         "internalType": "uint256",
-        "name": "",
+        "name": "noCount",
         "type": "uint256"
       }
     ],
@@ -38,23 +31,17 @@
   },
   {
     "inputs": [],
-    "name": "getTotalProposals",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
+    "name": "startVoting",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "proposalId",
-        "type": "uint256"
+        "internalType": "bool",
+        "name": "vote",
+        "type": "bool"
       }
     ],
     "name": "vote",
