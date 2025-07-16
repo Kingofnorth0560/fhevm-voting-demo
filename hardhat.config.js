@@ -1,4 +1,4 @@
-import "@nomicfoundation/hardhat-toolbox";
+import "@fhenixprotocol/hardhat-plugin";
 
 export default {
   solidity: "0.8.20",
