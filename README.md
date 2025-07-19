@@ -4,7 +4,7 @@ This repository contains a **minimal but fully‑functional** encrypted DAO voti
 
 ## What it demonstrates
 - **Encrypted inputs:** voters submit ciphertexts generated with `fhevmjs`.
-- **On‑chain homomorphic addition:** the contract aggregates votes with `FHE.add` — never decrypting.
+- **On‑chain homomorphic addition:** the contract aggregates votes with `FHE.add` , never decrypting.
 - **Encrypted output:** anyone entitled to the decryption key can reveal the tally off‑chain.
 
 ## Folder structure
@@ -30,5 +30,5 @@ node castVote.js      # cast encrypted vote
 ```
 
 ## Docs & Links
-* Zama docs – <https://docs.zama.ai>
-* Fhenix testnet RPC – `https://api.fhenix.zone:7747`
+* Zama docs : <https://docs.zama.ai>
+* Fhenix testnet RPC : `https://api.fhenix.zone:7747`
